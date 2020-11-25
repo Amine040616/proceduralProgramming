@@ -1,0 +1,43 @@
+PROCEDURE dot_product(a1,a2,var ps:INTEGER)
+VAR
+    a1 : ARRAY_OF INTEGER[3];
+    a2 : ARRAY_OF INTEGER[3];
+    ps : INTEGER;
+BEGIN
+    ps :=0;
+    FOR i FROM 0 TO 2 STEP 1  DO
+        ps+= a1[i]*a2[i];
+    END_FOR
+END
+
+ALGORITHM dot_product
+VAR
+    v1 : ARRAY_OF INTEGER[3];
+    v2 : ARRAY_OF INTEGER[3];
+BEGIN
+    dot_product(v1,v2);
+    IF (ps=0) THEN
+        Write(" IR are orthogonal");
+    ELSE
+        Write(" IR aren't orthogonal");
+    END_IF
+END
+
+FUNCTION dot_product(a1,a2) : INTEGER
+VAR
+    a1 : ARRAY_OF INTEGER[3];
+    a2 : ARRAY_OF INTEGER[3];
+    ps : INTEGER;
+BEGIN
+    ps :=0;
+    FOR i FROM 0 TO 2 STEP 1  DO
+        ps+= a1[i]*a2[i];
+    END_FOR
+    IF (ps=0) THEN
+        Write(" IR are orthogonal");
+    ELSE
+        Write(" IR aren't orthogonal");
+    END_IF
+END
+
+
